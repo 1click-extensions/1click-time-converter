@@ -7,8 +7,8 @@
   "local_time": {"message": "זמן מקומי" },
   "add": {"message": "הוסף" },
   "new_clock_in": {"message": "שעון חדש ב" },
-  "append_new_clock": {"message": "הוסף" },
+  "append_new_clock": {"message": "הוסף שעון חדש" },
   "my_clocks": {"message": "השעונים שלי" },
-  "back_to_live_clock": {"message": "חזור לשעון פעילים" }
+  "back_to_live_clock": {"message": "חזור לשעון חיים" }
 }
 
