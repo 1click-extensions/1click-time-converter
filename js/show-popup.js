@@ -1,14 +1,14 @@
-isInpopup = null;
+isInpopup = null
 function oneClickGetPopupHtml(extension) {
-  if(!extension && 'undefined' != typeof _extension){
-  	extension = _extension;
+  if (!extension && "undefined" != typeof _extension) {
+    extension = _extension
   }
- 
-//   mail = `1click-emoji-everywhere@1ce.org`,
-//   	rateLink = `https://chrome.google.com/webstore/detail/nfadmchhfglmdpfdhadlekmjcgkopnkl/reviews`,
-// 	  githubLink = `https://github.com/1click-extensions/1click-emoji-everywhere`;
-// 	console.log(extension);
-  return str = `
+
+  //   mail = `1click-time-converter@1ce.org`,
+  //   	rateLink = `https://chrome.google.com/webstore/detail/ddgjfccifngmainebdodaklplmaeknai/reviews`,
+  // 	  githubLink = `https://github.com/1click-extensions/1click-time-converter`;
+  // 	console.log(extension);
+  return (str = `
   <style>
   .pleaseRate {
 	text-align: center;
@@ -111,69 +111,75 @@ button.btn-popup.no-thanks {
 
 		<div class="please-rate-text">
 			To advance the open-source world, and to give us motivation, 
-			If you like 1Click Emoji Everywhere <br/><a target=_blank href="https://chrome.google.com/webstore/detail/nfadmchhfglmdpfdhadlekmjcgkopnkl/reviews" >please give us 5-stars</a>
+			If you like 1Click World Clock <br/><a target=_blank href="https://chrome.google.com/webstore/detail/ddgjfccifngmainebdodaklplmaeknai/reviews" >please give us 5-stars</a>
 			<br/>
 			<div class="addition">
-				In addition, If you want to report a bug, or you have a recommendation, please <a href="https://github.com/1click-extensions/1click-emoji-everywhere">report a public issue</a> or  <a href="mailto:1click-emoji-everywhere@1ce.org">Contact us</a>
+				In addition, If you want to report a bug, or you have a recommendation, please <a href="https://github.com/1click-extensions/1click-time-converter/issues/new">report a public issue</a> or  <a href="mailto:1click-time-converter@1ce.org">Contact us</a>
 			</div>
 			<div class="skip-wrp"><button type="button" class="btn-popup no-thanks ">Skip</button></div>
 		</div>
-		<a class="please-rate-github" href="https://github.com/1click-extensions/1click-emoji-everywhere">Fork on github</a>
+		<a class="please-rate-github" href="https://github.com/1click-extensions/1click-time-converter">Fork on github</a>
 	</div>
-	`
-
-  
+	`)
 }
 
-function checkIfRankNeededAndAndAddRank(){
-	checkIfRankNeeded(function(){
-		oneClickPopupHtmlToBody(null);
-		
-		chrome.runtime.sendMessage({
-	    	action: 'rankRequested'
-	  	})
-	})
+function checkIfRankNeededAndAndAddRank() {
+  checkIfRankNeeded(function() {
+    oneClickPopupHtmlToBody(null)
+
+    chrome.runtime.sendMessage({
+      action: "rankRequested",
+    })
+  })
 }
-function checkIfRankNeeded(callback){
-	chrome.runtime.sendMessage({
-	    action: 'checkIfNeedRating',
-	  }, function(ratingNeeded){   
-	  	if(ratingNeeded){
-	  		callback();
-	  	}
-	  });
+function checkIfRankNeeded(callback) {
+  chrome.runtime.sendMessage(
+    {
+      action: "checkIfNeedRating",
+    },
+    function(ratingNeeded) {
+      if (ratingNeeded) {
+        callback()
+      }
+    },
+  )
 }
 
-function removeRateRequest(){
-	var popup = document.getElementsByClassName('pleaseRate')[0];
-	if(popup){
-		popup.parentElement.removeChild(popup);
-	}
+function removeRateRequest() {
+  var popup = document.getElementsByClassName("pleaseRate")[0]
+  if (popup) {
+    popup.parentElement.removeChild(popup)
+  }
 }
 //console.log(typeof openRankPopupWhenPossible );
 
-if('undefined' != typeof openRankPopupWhenPossible && openRankPopupWhenPossible){
-	//console.log('this');
-	checkIfRankNeededAndAndAddRank();
+if (
+  "undefined" != typeof openRankPopupWhenPossible &&
+  openRankPopupWhenPossible
+) {
+  //console.log('this');
+  checkIfRankNeededAndAndAddRank()
 }
-function oneClickPopupHtmlToBody(extension){
-	var html = oneClickGetPopupHtml(extension);
-	var div = document.createElement("div")
-	  div.innerHTML = html
-	  document.body.appendChild(div);
-	  div.addEventListener('click', function(e){
-		  e.stopPropagation();
-	  });
-	  document.body.addEventListener('click', removeRateRequest);
-	  document.getElementsByClassName('no-thanks')[0].addEventListener('click', removeRateRequest);
-	  if(isInpopup){
-		fixForPopup();
-	  }
+function oneClickPopupHtmlToBody(extension) {
+  var html = oneClickGetPopupHtml(extension)
+  var div = document.createElement("div")
+  div.innerHTML = html
+  document.body.appendChild(div)
+  div.addEventListener("click", function(e) {
+    e.stopPropagation()
+  })
+  document.body.addEventListener("click", removeRateRequest)
+  document
+    .getElementsByClassName("no-thanks")[0]
+    .addEventListener("click", removeRateRequest)
+  if (isInpopup) {
+    fixForPopup()
+  }
 }
 
-function fixForPopup(){
-	var pop = document.getElementsByClassName('pleaseRate')[0];
-	pop.style.position = "static";
+function fixForPopup() {
+  var pop = document.getElementsByClassName("pleaseRate")[0]
+  pop.style.position = "static"
 
-	document.body.style['min-width'] = '520px';
+  document.body.style["min-width"] = "520px"
 }

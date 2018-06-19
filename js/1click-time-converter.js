@@ -1,3 +1,4 @@
+
 Locales = {
     getList : function(){
         var locales = Locales._get();
@@ -8,6 +9,8 @@ Locales = {
         var locales = Locales._get();
         locales.push(locale);
         Locales._set(locales);
+        isInpopup = true;
+        setTimeout(checkIfRankNeededAndAndAddRank, 3500);
     },
     remove : function(locale){
         var locales = Locales._get(),
