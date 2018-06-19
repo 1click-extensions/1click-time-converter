@@ -5,19 +5,80 @@
   <title>Emujies</title>
   <link href="../select/select.css" rel="stylesheet"></link>
   <style>
+    h2{
+      text-align:center;
+    }
     .popup-box{
       min-height: 450px;
-      min-width: 350px;
+      min-width: 400px;
+      padding-top: 5px;
     }
     .clock-title,.clock-inner{
       display: inline-block;
-      padding: 2px 7px;
+      padding:8px 7px;
+      margin: 0;
 
     }
+    .clock-set-time{
+      width:30px;
+    }
+    h4.clock-title {
+      min-width: 90px;
+  }
+    .clock-set-time-wrp {
+        display: inline-block;
+    }
+    .clock-remove {
+      border: 0;
+      background: url(../images/x.svg);
+      float: right;
+      background-size: 20px;
+      overflow: hidden;
+      text-indent: 999px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin-top: 26px;
+  }
+  .btn {
+				text-decoration: none;
+				color: #fff;
+				background-color: #26a69a;
+				text-align: center;
+				letter-spacing: .5px;
+				-webkit-transition: background-color .2s ease-out;
+				transition: background-color .2s ease-out;
+        cursor: pointer;
+        font-size: 14px;
+        outline: 0;
+        border: none;
+        border-radius: 2px;
+        display: inline-block;
+        height: 22px;
+        line-height: 18px;
+        padding: 0 4px;
+        vertical-align: middle;
+        -webkit-tap-highlight-color: transparent;
+        margin-left: 10px;
+}
+ .clock-inner {
+  background: url(../images/clock.png) center no-repeat;
+    width: 51px;
+    padding: 23px 15px 20px 19px;
+    margin: 7px 0;
+    text-align: center;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
   </style>
 </head>
 <body class="popup-box" >
+  
 <div id="list" ></div>
+<hr/>
   <script src="../js/jQuery.js"></script>
   <script src="../js/moment-with-locales.min.js" ></script>
   <script src="../js/moment-timezone-with-data.js"></script>

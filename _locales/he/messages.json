@@ -1,7 +1,14 @@
 {
-  "browser_action": {"message": "הוסף אימוג'י" },
-  "message": {"message": "כעת אתה יכול להדביק את האימוג'י בכל מקום" },
-  "ext_desc": {"message": "השתמש באימוג'ים בכל מקום ברשת" },
-  "ext_name": {"message": "אמוג'י בכל מקום בלחיצה אחת" }
+  "browser_action": {"message": "שעון עולמי" },
+  "ext_desc": {"message": "בדוק את השעה הנוכחית או שעה אחרת, בכל איזור זמן" },
+  "ext_name": {"message": "שעון עולמי בלחיצה אחת" },
+  "please_fill_valid": {"message": "אנא הכנס שעה ודקה חוקיים" },
+  "check_other_time": {"message": "בדוק זמן אחר" },
+  "local_time": {"message": "זמן מקומי" },
+  "add": {"message": "הוסף" },
+  "new_clock_in": {"message": "שעון חדש ב" },
+  "append_new_clock": {"message": "הוסף" },
+  "my_clocks": {"message": "השעונים שלי" },
+  "back_to_live_clock": {"message": "חזור לשעון פעילים" }
 }
 

@@ -1,7 +1,14 @@
 {
-  "browser_action": {"message": "Use emojies" },
-  "message": {"message": "Now you can paste the emoji eveywhere" },
-  "ext_desc": {"message": "Use emojies everywhere on web" },
-  "ext_name": {"message": "1click Emoji Everywhere" }
+  "browser_action": {"message": "World Clock" },
+  "ext_desc": {"message": "Check current or another time at any timezone" },
+  "ext_name": {"message": "1click World Clock" },
+  "please_fill_valid": {"message": "Please fill valid hour and minute" },
+  "local_time": {"message": "Local time" },
+  "check_other_time": {"message": "Check another time" },
+  "add": {"message": "Add" },
+  "new_clock_in": {"message": "New clock in" },
+  "append_new_clock": {"message": "Append new clock" },
+  "my_clocks": {"message": "My clocks" },
+  "back_to_live_clock": {"message": "Back to live clocks" }
 }
 

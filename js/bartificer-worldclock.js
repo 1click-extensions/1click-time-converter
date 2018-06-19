@@ -299,7 +299,7 @@ var bartificer = bartificer ? bartificer : {};
                 }
 
                 else{
-                    return fixedTime.hour && !isNaN(fixedTime.hour) && fixedTime.minute && !isNaN(fixedTime.minute) && (!fixedTime.second || !isNaN(fixedTime.second));
+                    return fixedTime.hour < 24 && fixedTime.hour > -1 && !isNaN(fixedTime.hour) && fixedTime.minute > -1 && fixedTime.minute < 60 && !isNaN(fixedTime.minute) && (!fixedTime.second || !isNaN(fixedTime.second));
                 }
             }
         },
@@ -727,14 +727,15 @@ var bartificer = bartificer ? bartificer : {};
      */
     bartificer.Worldclock.prototype.currentMoment = function(){
         var now = moment();
+       
+        if(this._options.timezone !== 'LOCAL'){
+            now = now.tz(this._options.timezone);
+        }
         if(this._options.fixedTime){
             now.set('hour', this._options.fixedTime.hour);
             now.set('minute', this._options.fixedTime.minute);
             now.set('second', this._options.fixedTime.second ?  this._options.fixedTime.second : 0);
         }   
-        if(this._options.timezone !== 'LOCAL'){
-            now = now.tz(this._options.timezone);
-        }
         return now;
     };
     bartificer.Worldclock.prototype.fixClock = function(hour, minute, second){
