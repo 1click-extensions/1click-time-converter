@@ -173,7 +173,7 @@ function changeClocks(that){
             else{
                 now.tz(Locales.list[zoneName].locale);
             }
-            console.log(now.hour(), now.minute(), now.second(), Locales.list[zoneName].locale)
+            //console.log(now.hour(), now.minute(), now.second(), Locales.list[zoneName].locale)
             Locales.list[zoneName].clock.fixClock(now.hour(), now.minute(), now.second())
         //}
     }
@@ -181,6 +181,6 @@ function changeClocks(that){
 
 function getVal(cont,name){
     var val = Number(cont.find('.' + name).val());
-    console.log(name,val);
+    //console.log(name,val);
     return !isNaN(val) ? val : (name == "second" ? 0 : -1);
 }

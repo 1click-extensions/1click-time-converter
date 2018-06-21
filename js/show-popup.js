@@ -25,7 +25,8 @@ function oneClickGetPopupHtml(extension) {
 	overflow: hidden;
 	
 	box-shadow: 0 0 0 2px hsl(0, 0%, 80%);
-	box-sizing:border-box;
+  box-sizing:border-box;
+  z-index:9999;
 }
 .pleaseRate a,
 .pleaseRate a:hover,
